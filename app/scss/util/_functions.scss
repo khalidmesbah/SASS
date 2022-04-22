@@ -1,0 +1,19 @@
+@use "sass:math";
+
+@function rem($px) {
+  // divide $px by 16 to calc rems if the parameter is unitless
+  @if math.is-unitless($px) {
+    @return math.div($px, 16) + rem;
+  } @else {
+    // otherwise throw an error if the parameter has a unit
+    @error "the parameter has a unit!";
+  }
+}
+
+@function em($px) {
+  @if math.is-unitless($px) {
+    @return math.div($px, 16) + em;
+  } @else {
+    @error "the parameter has a unit!";
+  }
+}

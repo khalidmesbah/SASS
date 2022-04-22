@@ -1,0 +1,78 @@
+@use "../util" as *;
+
+// create a placeholder
+
+%widget {
+  padding: rem(16);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: rem(40);
+  width: min(100% - rem(40), rem(1200));
+  margin-inline: auto;
+
+  @include breakpoint(large) {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  @include breakpoint-down(large) {
+    padding-inline: rem(20);
+  }
+
+  &__main,
+  &__sidebar {
+    padding: rem(40);
+  }
+
+  &__main {
+    background-color: hsl(240, 100%, 33%);
+
+    // order matters
+    /* in that order
+        1-medium
+        2-large
+        3-xlarge
+    */
+    @include breakpoint(medium) {
+      background: orange;
+    }
+    @include breakpoint(large) {
+      background: red;
+    }
+    @include breakpoint(xlarge) {
+      background: green;
+    }
+  }
+
+  &__sidebar {
+    @include breakpoint-down(medium) {
+      text-align: center;
+    }
+    @include breakpoint-down(small) {
+      text-align: right;
+    }
+  }
+
+  &__widget {
+    // border: solid; // kill margin collapse
+    padding: rem(16); // kill margin collapse
+    $widget: &;
+    &--green {
+      // @extend .grid__widget;
+      // @extend #{$widget}; // interpolation
+      @extend %widget;
+      background-color: green;
+    }
+    // BEM instead of utility classes
+    &--magenta {
+      @extend %widget;
+      background-color: magenta;
+    }
+    // &.cyan {
+    //   //   @extend %widget;
+    //   background-color: cyan;
+    // }
+  }
+}

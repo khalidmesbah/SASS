@@ -1,0 +1,30 @@
+// @use "./colors" as c; // import colors namespace to make sure that it's variables don't conflict with other variables with the same name of other module/namespace
+// @use "../util" as u;
+
+/*
+  font-family: u.$font;
+  background: c.$background-clr;
+  color: c.$text-clr;
+  */
+
+@use "./colors" as *; // a conflict will be between variables of the same name from different modules/namespaces
+@use "../util" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font;
+  background: $background-clr;
+  color: $text-clr;
+}
