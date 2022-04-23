@@ -20,7 +20,15 @@
 - rows and columns are also called tracks
 - use `border:solid` or `padding:1px` to kill margin collapse # refer to _grid.scss
 - Sass maps are built-in sass module
-- Sass maps similar to objects   and dictionaries
-
+- Sass maps similar to objects and dictionaries
+### BEM : block access modifier => a methodology use to name classes in a big project
+- block: a standalone entity that's meaningful on its own
+- access: a part of a block that has no standalone meaning and is semantically tied to its block
+- modifier: a flag on a block or element that are used to change appearance or behavior
+- `class="block__element--modifier"`
+  - block => block
+  - element => element
+  - modifier => modifier
+-  
 #### the link of the great tutorial
 [click me](https://youtu.be/jfMHA8SqUL4)
