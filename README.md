@@ -22,13 +22,14 @@
 - Sass maps are built-in sass module
 - Sass maps similar to objects and dictionaries
 ### BEM : block access modifier => a methodology use to name classes in a big project
+- BEM is a css naming convention  
 - block: a standalone entity that's meaningful on its own
 - access: a part of a block that has no standalone meaning and is semantically tied to its block
 - modifier: a flag on a block or element that are used to change appearance or behavior
-- `class="block__element--modifier"`
-  - block => block
-  - element => element
-  - modifier => modifier
+- `class="block block__element block--modifier element--modifier block__element--modifier"`
+  - block => block `block`
+  - element => element `block__element`
+  - modifier => modifier `block--modifier element--modifier`
 -  
 #### the link of the great tutorial
 [click me](https://youtu.be/jfMHA8SqUL4)
